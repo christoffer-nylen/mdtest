@@ -1,28 +1,22 @@
-# MDTEST
+# mdtest
 
-mdtest is a tool that accepts a markdown (.md) file as input and verifies the 
-correctness of unix shell style code blocks. All lines starting with `$` gets 
-executed as if they were actual unix commands. The tool then verifies that the 
-issued command returns as expected (based on its exit code). If a failure is expected, this can be 
-specified using an `# Expected failure` comment just before the command is 
-executed.
+mdtest accepts a markdown (.md) file as input and executes each code block
+as if it was a series of unix shell commands. 
 
-## Usage
+A **PASSED** or **FAILED** will be presented for each block based on the result
+(exit code) of the commands.
 
-This section shows an example where we use `mdtest` to verify that gcc returns
-the correct exit code for some ok and not ok program:
+Each line starting with `$` will be interpreted as a unix command. 
 
-Create some example data to use for our test:
-```
-$ echo "int main(){};" > ok_file.c
-$ echo "bad syntax" > bad_file.c
-```
+If a failure is expected, this can be specified using a `# Expected failure` in 
+the previous row.
 
-Write some example `README.md` file with some code blocks:
+## Usage example
+
+Write some example `README.md` file with some code block:
 
 ```
 $ gcc -c ok_file.c
-
 # Expect failure:
 $ gcc -c bad_file.c
 ```
@@ -30,7 +24,7 @@ $ gcc -c bad_file.c
 Run mdtest:
 
 ```
-mdtest -f README.md
+$ mdtest -f README.md
 ```
 
 
