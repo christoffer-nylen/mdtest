@@ -6,12 +6,12 @@ as if it was a series of unix shell commands.
 A **PASSED** or **FAILED** will be presented for each block based on the result
 (exit code) of the commands.
 
-Each line starting with `$` will be interpreted as a unix command. 
+Lines beginning with `$` will be interpreted as a unix command. 
 
 If a failure is expected, this can be specified using a `# Expected failure` in 
 the previous row.
 
-## Usage example
+## Example
 
 Write some example `README.md` file with some code block:
 
