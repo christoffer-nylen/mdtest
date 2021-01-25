@@ -1,6 +1,6 @@
 # mdtest
 
-mdtest accepts a markdown (.md) file as input and executes each code block
+**mdtest** accepts a markdown (.md) file as input and executes each code block
 as if it was a series of unix shell commands. 
 
 A **PASSED** or **FAILED** will be presented for each block based on the result
